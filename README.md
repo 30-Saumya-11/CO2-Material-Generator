@@ -11,6 +11,8 @@ This project is inspired by the research paper:
 
 ## Dataset Description and Bounds
 
+> **Data note:** the dataset in this public repository is **synthetic**. `scripts/generate_raw_data.py` generates 573 rows within the feature ranges reported in the paper (seed 42), so the pipeline can be run end to end. Metrics computed on it describe the pipeline, not real materials.
+
 The system is built on a dataset consisting of 573 baseline materials with the following structural and environmental features:
 
 | Feature Name | Description | Unit | Range |
