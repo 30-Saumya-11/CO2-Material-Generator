@@ -1,0 +1,71 @@
+# CO2 Material Generator Configuration
+
+columns:
+  - SA
+  - TPV
+  - MPV
+  - C
+  - H
+  - N
+  - O
+  - T
+  - P
+  - CO2
+
+feature_ranges:
+  SA:
+    min: 2.5
+    max: 3337.0
+    unit: "m²/g"
+  TPV:
+    min: 0.02
+    max: 3.09
+    unit: "cm³/g"
+  MPV:
+    min: 0.04
+    max: 1.32
+    unit: "cm³/g"
+  C:
+    min: 40.4
+    max: 96.96
+    unit: "%"
+  H:
+    min: 0.0
+    max: 6.01
+    unit: "%"
+  N:
+    min: 0.0
+    max: 38.15
+    unit: "%"
+  O:
+    min: 0.0
+    max: 54.0
+    unit: "%"
+  T:
+    min: 0.0
+    max: 30.0
+    unit: "°C"
+  P:
+    min: 0.10
+    max: 1.01
+    unit: "bar"
+  CO2:
+    min: 0.36
+    max: 8.20
+    unit: "mmol/g"
+
+confidence:
+  co2_min: 0.36
+  co2_max: 8.20
+  warn_buffer: 0.10         # Warn if within 10% of training boundary
+  hypothesis_limit: 0.20    # Extrapolation up to 20% beyond range is HYPOTHESIS, beyond is SPECULATIVE/UNSAFE
+
+paths:
+  raw_dataset: "data/raw_dataset.csv"
+  processed_dataset: "data/processed_dataset.csv"
+  new_experiments: "data/new_experiments.csv"
+  combined_dataset: "data/combined_dataset.csv"
+  forward_model_prefix: "models/forward_model"
+  inverse_model_prefix: "models/inverse_model"
+  scaler_prefix: "models/scaler"
+  model_registry: "models/model_registry.json"
